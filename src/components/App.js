@@ -1,8 +1,9 @@
 import React from 'react';
 import citations from '../citations'
 import Citation from './Citation'
+import Logo from '../../src/assets/Logo.png'
 
-
+//http://lorempixel.com/
 class App extends React.Component {
 
   state = {};
@@ -32,9 +33,9 @@ class App extends React.Component {
   render() {
     return(
       <div>
+        <img className='rotating' src={Logo} alt='logo'/>
         <Citation details={this.state}/>
-        <button onClick={e => this.genererCitation(e)}>Une autre citation !</button>
-
+        <button onClick={e => this.genererCitation(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
       </div>
     )
   };
