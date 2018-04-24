@@ -33,7 +33,11 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <img className='rotating' src={Logo} alt='logo'/>
+        <header>
+        <img className="App-logo tc" src={Logo} alt='logo'/>
+        <h1 className="title tc">React Application</h1>
+        </header>
+
         <Citation details={this.state}/>
         <button onClick={e => this.genererCitation(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
       </div>
