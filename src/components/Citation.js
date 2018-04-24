@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-class Citation extends React.Component{
+class Citation extends Component{
 
   render(){
     return(

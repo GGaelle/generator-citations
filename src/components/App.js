@@ -1,10 +1,12 @@
-import React from 'react';
-import citations from '../citations'
+import React, { Component } from 'react';
+import citations from '../container/citations'
 import Citation from './Citation'
+import Generator from '../container/Generator'
+import images from '../container/images'
 //import Logo from '../../src/assets/Logo.png'
 
-//http://lorempixel.com/
-class App extends React.Component {
+
+class App extends Component {
 
   state = {};
 
@@ -30,12 +32,25 @@ class App extends React.Component {
 
   };
 
+
+  genererImage = event => {
+    const keyArrayImage = Object.keys(images)
+    const randomKeyImage = keyArrayImage[Math.floor(Math.random() * keyArrayImage.length)]
+
+    if (this.state.image === images[randomKeyImage].image) {
+      this.genererImage();
+      return
+    }
+
+    this.setState(images[randomKeyImage])
+  };
+
   render() {
     return(
       <div>
-        <img alt='img-positive' src={`http://lorempixel.com/200/200/nature`} />
+        <Generator details={this.state}/>
         <Citation details={this.state}/>
-        <button onClick={e => this.genererCitation(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
+        <button onClick={e => this.genererCitation(e) && this.genererImage(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
       </div>
     )
   };
