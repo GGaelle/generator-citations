@@ -11,7 +11,8 @@ class App extends Component {
   state = {};
 
   componentWillMount(){
-    this.genererCitation()
+    this.genererCitation();
+    this.genererImage()
   }
 
   genererCitation = event => {

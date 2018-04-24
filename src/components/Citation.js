@@ -6,10 +6,13 @@ class Citation extends Component{
     return(
       <p>
         {this.props.details.citation}
-        <span>- {this.props.details.auteur} -</span>
+        <span>- {this.props.details.auteur} - <button onclick className='btn1'>W</button></span>
+
       </p>
     )
   }
 }
 
 export default Citation
+
+//={e => href:'https://www.wikipedia.org/${this.props.details.auteur}'
