@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import citations from '../container/citations'
 import Citation from './Citation'
-import Generator from '../container/Generator'
+/*import Generator from '../container/Generator'
 import images from '../container/images'
-//import Logo from '../../src/assets/Logo.png'
-
+import Logo from '../../src/assets/Logo.png'
+*/
 
 class App extends Component {
 
   state = {};
 
   componentWillMount(){
-    this.genererCitation();
-    this.genererImage()
+    this.genererCitation()
   }
 
   genererCitation = event => {
@@ -34,7 +33,7 @@ class App extends Component {
   };
 
 
-  genererImage = event => {
+  /*genererImage = event => {
     const keyArrayImage = Object.keys(images)
     const randomKeyImage = keyArrayImage[Math.floor(Math.random() * keyArrayImage.length)]
 
@@ -47,13 +46,13 @@ class App extends Component {
   };
 
   genererAll = event => {this.genererImage() + this.genererCitation()}
-
+*/
   render() {
     return(
       <div>
-        <Generator details={this.state}/>
+        
         <Citation details={this.state}/>
-        <button onClick={e => this.genererAll(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
+        <button onClick={e => this.genererCitation(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
       </div>
     )
   };
