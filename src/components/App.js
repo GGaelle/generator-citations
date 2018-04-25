@@ -46,12 +46,14 @@ class App extends Component {
     this.setState(images[randomKeyImage])
   };
 
+  genererAll = event => {this.genererImage() + this.genererCitation()}
+
   render() {
     return(
       <div>
         <Generator details={this.state}/>
         <Citation details={this.state}/>
-        <button onClick={e => this.genererCitation(e) && this.genererImage(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
+        <button onClick={e => this.genererAll(e)} className='br-pill {border-radius: 9999px} calisto'>-- Une autre citation ! --</button>
       </div>
     )
   };

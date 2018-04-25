@@ -5,14 +5,12 @@ class Generator extends Component {
   render(){
     return(
       <div className='image1'>
-        <img src={this.props.details.image} alt='foto' />
+        {this.props.details.image}
       </div>
       )
     }
 
   }
-
-
 
   export default Generator
 
